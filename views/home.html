@@ -1,0 +1,15 @@
+<div class="home-container">
+  <h1>Hello !</h1>
+  <div my-customer></div>
+  <p class="lead">Enter Text to be converted to Pig Latin equivalent</p>
+  <input type="text" class="form-control" ng-model="inputData">
+  <div id="pig-btn-container">
+  	<button class="btn btn-lg btn-success" ng-click="getFilteredData(inputData)"> Convert to Pig Latin!</button>
+  </div>
+  <div id="pig-filter-section">Pig Latin Converted Text:<span id="pig-filtered-result">{{filterData}}</span></div>
+
+  <div>10 Most Recent Pig Latin converstions are displayed here:</div>
+  <div ng-repeat="item in history track by $index">
+  	{{item}}
+  </div>
+</div>

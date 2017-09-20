@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/services/PigFilterService.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">src/services/PigFilterService.js</span></h1>
+    <h2>
+        Statements: <span class="metric">64.29% <small>(18 / 28)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">62.5% <small>(5 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">50% <small>(2 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">64.29% <small>(18 / 28)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">src/services/</a> &#187; PigFilterService.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">app.factory('PigFilterService', [
+  function() {
+&nbsp;
+    function getPigFilteredData(data) {
+&nbsp;
+      var convertedData, vowels = "aeiou";
+      var firstChar = data.charAt(0);
+&nbsp;
+      if(vowels.indexOf(firstChar) &gt;= 0 ){
+        // first character is vowel then add "way" in the end of the string
+        convertedData = data + "way";
+&nbsp;
+      } else {
+        // first character is consonant
+&nbsp;
+        var prefixStr, suffixStr;
+        for(var i=0;i&lt;data.length; i++) {
+          if(vowels.indexOf(data[i]) &gt;= 0){
+            break;
+          }
+        }
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if(i !== data.length) {
+          //  extract the string before the first occurence of the vowel and then add it at the end of the string, then add "ay"
+          suffixStr = data.substr(0, i);
+          prefixStr = data.substr(i, data.length - i);
+          convertedData = prefixStr + suffixStr + "ay";
+        } else {
+        // if there are no vowels in the string then print the string as it is.
+<span class="cstat-no" title="statement not covered" >          convertedData = data;</span>
+        } 
+      }
+&nbsp;
+      return convertedData;
+&nbsp;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function splitSentence(sentence){</span>
+<span class="cstat-no" title="statement not covered" >      var words = sentence.split(" ");</span>
+<span class="cstat-no" title="statement not covered" >      return words;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function getPigFilteredDataSentence(data) {</span>
+<span class="cstat-no" title="statement not covered" >      if(data.indexOf(' ') &gt; -1){</span>
+        // sentence
+<span class="cstat-no" title="statement not covered" >        var words = splitSentence(data);</span>
+<span class="cstat-no" title="statement not covered" >        var convertedData=[];</span>
+<span class="cstat-no" title="statement not covered" >        for(var i=0;i &lt;words.length; i++){</span>
+<span class="cstat-no" title="statement not covered" >          convertedData[i] = getPigFilteredData(words[i]);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return convertedData;</span>
+&nbsp;
+      } else {
+        //single word
+<span class="cstat-no" title="statement not covered" >        return getPigFilteredData(data);</span>
+      }
+    }
+&nbsp;
+    return {
+      getPigFilteredDataSentence: getPigFilteredDataSentence,
+      getPigFilteredData: getPigFilteredData
+    };
+  }
+]);</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Sep 19 2017 16:52:41 GMT+0100 (BST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

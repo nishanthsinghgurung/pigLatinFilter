@@ -1,0 +1,57 @@
+{
+  "name": "pigFilterApp",
+  "version": "1.0.0",
+  "description": "Pig Filter application in Angular.js using Grunt as task runner",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nishanthsinghgurung/PigFilterApp.git"
+  },
+  "keywords": [
+    "Grunt",
+    "Angular.js",
+    "angular",
+    "boilerplate",
+    "less"
+  ],
+  "author": "Nishanth Singh Gurung",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nishanthsinghgurung/PigFilterApp.git"
+  },
+  "homepage": "https://github.com//nishanthsinghgurung/PigFilterApp.git",
+  "devDependencies": {
+    "connect-modrewrite": "^0.8.2",
+    "grunt": "^0.4.1",
+    "grunt-bower-task": "^0.4.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-connect": "^0.10.1",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-less": "^1.0.0",
+    "grunt-contrib-uglify": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-karma": "^0.12.2",
+    "grunt-karma-coveralls": "^2.5.2",
+    "grunt-mkdir": "^0.1.2",
+    "grunt-newer": "^1.1.0",
+    "jasmine-core": "^2.2.0",
+    "jasmine-reporters": "^2.0.5",
+    "karma": "^1.6.0",
+    "karma-coverage": "^0.2.7",
+    "karma-jasmine": "^0.3.5",
+    "karma-junit-reporter": "^0.2.2",
+    "karma-ng-html2js-preprocessor": "^0.1.2",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-script-launcher": "^0.1.0",
+    "less": "^2.5.0",
+    "load-grunt-tasks": "^3.1.0",
+    "matchdep": "^0.3.0",
+    "time-grunt": "^1.1.0"
+  }
+}
